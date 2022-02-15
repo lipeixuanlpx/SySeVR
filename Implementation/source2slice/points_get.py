@@ -1,7 +1,7 @@
 ## coding:utf-8
 from access_db_operate import *
 
-
+#敏感API，恶意软件的实现需要调用特定API来完成，如恶意计费软件调用发送短信API，隐私窃取软件调用发送短信API
 def get_all_sensitiveAPI(db):
     fin = open("sensitive_func.pkl", 'rb')
     list_sensitive_funcname = pickle.load(fin)
@@ -51,7 +51,7 @@ def get_all_sensitiveAPI(db):
 
     return _dict
 
-
+#找到所有指针
 def get_all_pointer(db):
     _dict = {}
     list_pointers_node = get_pointers_node(db)
@@ -72,7 +72,7 @@ def get_all_pointer(db):
 
     return _dict
 
-
+#找到所有数组
 def get_all_array(db):
     _dict = {}
     list_arrays_node = get_arrays_node(db)
