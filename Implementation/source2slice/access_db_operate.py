@@ -33,11 +33,11 @@ def get_all_def_bydefnode(db, node_id):
 
 
 def get_exprstmt_node(db):
-    query_expr_str = "queryNodeIndex('type:ExpressionStatement')"
-    #results = db.runGremlinQuery(query_expr_str)
+    query_expr_str = "queryNodeIndex('type:ExpressionStatement')" #表达式语句，带=
+    #results = db.runGremlinQuery(query_expr_str)  #
     results_1 = db.runGremlinQuery(query_expr_str)
 
-    query_iddecl_str = 'queryNodeIndex("type:IdentifierDeclStatement")'
+    query_iddecl_str = 'queryNodeIndex("type:IdentifierDeclStatement")' #标识符声明语句
     results_2 = db.runGremlinQuery(query_iddecl_str)
 
     results = results_1 + results_2
